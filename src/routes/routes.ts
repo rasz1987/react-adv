@@ -12,13 +12,14 @@ interface Route {
 const Lazy2 = lazy(() => import('../01-lazyload/pages/LazyPage2'))
 const Lazy1 = lazy(() => import('../01-lazyload/pages/LazyPage1'))
 const Lazy3 = lazy(() => import('../01-lazyload/pages/LazyPage3'))
+const LazyLayout = lazy(() => import('../01-lazyload/layout/LazyLayout'))
 
 export const routes: Route[] = [
 	{
-		to: '/lazy1',
-		path: 'lazy1',
-		component: Lazy1,
-		name: 'Lazy-1'
+		path: '/lazyload/*',
+		to: '/lazyload',
+		component: LazyLayout,
+		name: 'LazyLayout - Dash'
 	},
 	{
 		to: '/lazy2',
@@ -26,10 +27,10 @@ export const routes: Route[] = [
 		component: Lazy2,
 		name: 'Lazy-2'
 	},
-	{
-		to: '/lazy3',
-		path: 'lazy3',
-		component: Lazy3,
-		name: 'Lazy-3'
-	}
+	// {
+	// 	to: '/lazy3',
+	// 	path: 'lazy3',
+	// 	component: Lazy3,
+	// 	name: 'Lazy-3'
+	// }
 ]
